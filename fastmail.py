@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 
 print("FastMail - By S3RGI09")
 print("v1.0 estable")
+print("Parte de FastHost")
 servidor = None
 
 def manejar_interrupcion(signal, frame):
