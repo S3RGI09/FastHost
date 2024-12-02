@@ -1,4 +1,4 @@
-# FastHost & FastMail
+# FastHost Project
 ## FastHost
 FastHost es un servidor web simple y ligero desarrollado en Python. Este proyecto te permite ejecutar un servidor web local que puede servir contenido HTML ingresado directamente o cargado desde un archivo en un directorio específico.
 
