@@ -18,7 +18,7 @@ FastHost is a simple and lightweight web server developed in Python. This projec
 
 1. Clone or download the repository:
 ```
-git clone https://github.com/your-user/FastHost.git
+git clone https://github.com/S3RGI09/FastHost.git
 cd FastHost
 ```
 2. Run the script:
