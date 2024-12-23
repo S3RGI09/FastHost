@@ -5,47 +5,47 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 print("FastMail - By S3RGI09")
-print("v1.0 estable")
+print("v1.0 stable")
 print("FastHost Project")
-servidor = None
+server = None
 
-def manejar_interrupcion(signal, frame):
-    print("\nInterrupción recibida. Cerrando el servidor...")
-    if servidor:
-        servidor.quit()
-        print("Conexión al servidor SMTP cerrada.")
+def handle_interruption(signal, frame):
+    print("\nInterruption received. Closing the server...")
+    if server:
+        server.quit()
+        print("SMTP server connection closed.")
     sys.exit(0)
 
-signal.signal(signal.SIGINT, manejar_interrupcion)
+signal.signal(signal.SIGINT, handle_interruption)
 
-def enviar_correo():
-    global servidor
-    destinatario = input("Ingrese la dirección de correo del destinatario: ")
-    asunto = input("Ingrese el asunto del correo: ")
-    cuerpo = input("Ingrese el cuerpo del correo: ")
+def send_email():
+    global server
+    recipient = input("Enter the recipient's email address: ")
+    subject = input("Enter the email subject: ")
+    body = input("Enter the email body: ")
 
-    smtp_servidor = 'smtp.example.com'
-    smtp_puerto = 587
-    usuario = 'tu_correo@example.com'
-    contrasena = 'tu_contrasena'
+    smtp_server = 'smtp.example.com'
+    smtp_port = 587
+    user = 'your_email@example.com'
+    password = 'your_password'
 
-    mensaje = MIMEMultipart()
-    mensaje['From'] = usuario
-    mensaje['To'] = destinatario
-    mensaje['Subject'] = asunto
-    mensaje.attach(MIMEText(cuerpo, 'plain'))
+    message = MIMEMultipart()
+    message['From'] = user
+    message['To'] = recipient
+    message['Subject'] = subject
+    message.attach(MIMEText(body, 'plain'))
 
     try:
-        servidor = smtplib.SMTP(smtp_servidor, smtp_puerto)
-        servidor.starttls()
-        servidor.login(usuario, contrasena)
-        servidor.send_message(mensaje)
-        print("Correo enviado exitosamente.")
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(user, password)
+        server.send_message(message)
+        print("Email sent successfully.")
     except Exception as e:
-        print(f"Error al enviar el correo: {e}")
+        print(f"Error sending the email: {e}")
     finally:
-        if servidor:
-            servidor.quit()
+        if server:
+            server.quit()
 
 if __name__ == "__main__":
-    enviar_correo()
+    send_email()
