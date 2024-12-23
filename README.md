@@ -1,67 +1,67 @@
 # FastHost Project
 ## FastHost
-FastHost es un servidor web simple y ligero desarrollado en Python. Este proyecto te permite ejecutar un servidor web local que puede servir contenido HTML ingresado directamente o cargado desde un archivo en un directorio específico.
+FastHost is a simple and lightweight web server developed in Python. This project allows you to run a local web server that can serve HTML content entered directly or loaded from a file in a specified directory.
 
-### Características
+### Features
 
-- Servidor web simple que escucha en `localhost` y un puerto configurable (por defecto `8080`).
-- Permite ingresar el código HTML manualmente o cargarlo desde un archivo HTML.
-- Responde a solicitudes HTTP con el contenido HTML proporcionado.
-- Fácil de usar y configurar.
+- Simple web server that listens on `localhost` and a configurable port (default `8080`).
+- Allows entering HTML code manually or loading it from an HTML file.
+- Responds to HTTP requests with the provided HTML content.
+- Easy to use and configure.
 
-### Requisitos
+ ### Requirements
 
 - Python 3.x
-- HTML, CSS y JavaScript en el mismo archivo
+- HTML, CSS, and JavaScript in the same file
 
-### Instalación
+### Installation
 
-1. Clona o descarga el repositorio:
+1. Clone or download the repository:
 ```
-   git clone https://github.com/tu-usuario/FastHost.git
-   cd FastHost
+git clone https://github.com/your-user/FastHost.git
+cd FastHost
 ```
-2. Ejecuta el script:
+2. Run the script:
 ```
-   python servidor_web.py
+python web_server.py
 ```
-### Uso
+### Usage
 
-Cuando ejecutas el script, se te pedirá que elijas cómo proporcionar el contenido HTML:
+When you run the script, you will be asked to choose how to provide the HTML content:
 
-1. **Ingresar el código HTML directamente**: Puedes escribir el código HTML línea por línea y presionar Enter dos veces para terminar.
-2. **Cargar el código HTML desde un archivo**: Ingresa la ruta del directorio y el nombre del archivo HTML para leer su contenido.
+1. **Enter HTML code directly**: You can type the HTML code line by line and press Enter twice to finish.
+2. **Load HTML code from a file**: Enter the directory path and name of the HTML file to read its content.
 
-El servidor escuchará en `http://localhost:8080` y servirá el contenido proporcionado. Para detener el servidor, puedes presionar `Ctrl + C` en tu terminal.
+The server will listen on `http://localhost:8080` and serve the provided content. To stop the server, you can press `Ctrl + C` in your terminal.
 
-### Ejemplo de ejecución
+ ### Example of execution
 ```
-Seleccione una opción para proporcionar el contenido HTML:
-1. Ingresar el código HTML directamente
-2. Cargar el código HTML desde un archivo
-Ingrese 1 o 2: 1
+Select an option to provide the HTML content:
+1. Enter the HTML code directly
+2. Load the HTML code from a file
+Enter 1 or 2: 1
 ```
 ```
-Ingrese el código HTML (presione Enter dos veces para terminar):
+Enter the HTML code (press Enter twice to finish):
 ```
 ```html
 <html>
 <head>
-    <title>Mi Servidor Web</title>
+<title>My Web Server</title>
 </head>
 <body>
-    <h1>¡Hola, mundo!</h1>
-    <p>Este es un servidor web simple creado con Python.</p>
+<h1>Hello, world!</h1>
+<p>This is a simple web server built with Python.</p>
 </body>
 </html>
 ```
-### Detalles técnicos
+### Technical details
 
-- Utiliza la biblioteca estándar de Python (`socket`) para crear un servidor web básico.
-- Soporta solicitudes HTTP simples y responde con el contenido HTML proporcionado.
-- No es adecuado para producción, pero es una excelente herramienta educativa y de prueba.
+- Uses the Python standard library (`socket`) to create a basic web server.
+- Supports simple HTTP requests and responds with the provided HTML content.
+- Not suitable for production, but is an excellent educational and testing tool.
 
->[!warning]
+ >[!warning]
 >While static content such as HTML, CSS and JavaScript is not dangerous, the server can be compromised by a third party. You are responsible for the security of your server.
 >The server is designed for low traffic and use on a local network, although it is possible to redirect the ports of your router to point to the port of your private IP through your public IP, it is not recommended.
 
@@ -69,48 +69,48 @@ Ingrese el código HTML (presione Enter dos veces para terminar):
 >The server is designed to work with low load, if your website is going to receive high traffic, it is recommended to use other alternatives such as **Nginx** or **Apache**
 
 ## FastMail
-FastMail es un servidor de correo simple y ligero desarrollado en Python. Este proyecto permite enviar correos electrónicos desde la consola de manera sencilla.
+FastMail is a simple and lightweight mail server developed in Python. This project allows you to send emails from the console in a simple way.
 
-### Características
+### Features
 
-- Envía correos electrónicos a través de un servidor SMTP configurado.
-- Solicita la dirección del destinatario, el asunto y el cuerpo del mensaje.
-- Imprime la respuesta del servidor de correo al enviar el mensaje.
-- Ideal para pruebas y uso educativo.
+- Sends emails through a configured SMTP server.
+- Requests the recipient's address, subject and body of the message.
+- Prints the mail server's response when sending the message.
+- Ideal for testing and educational use.
 
-### Requisitos
+ ### Requirements
 
 - Python 3.x
 
-### Instalación
+### Installation
 
-1. Clona o descarga el repositorio:
+1. Clone or download the repository:
 ```
-   git clone https://github.com/S3RGI09/FastHost
-   cd FastHost
+git clone https://github.com/S3RGI09/FastHost
+cd FastHost
 ```
 
-3. Ejecuta el script:
-   `python FastHost`
+3. Run the script:
+`python FastHost`
 
-### Uso
+### Usage
 
-Cuando ejecutas el script, se te pedirá que ingreses la dirección de correo del destinatario, el asunto y el cuerpo del mensaje. Luego, se enviará el correo a través del servidor SMTP configurado y se imprimirá la respuesta del servidor.
+When you run the script, you will be asked to enter the recipient's email address, subject, and body of the message. The email will then be sent through the configured SMTP server and the server's response will be printed.
 
-### Ejemplo de ejecución
+### Example of execution
 ```
-Ingrese la dirección de correo del destinatario: example@example.com
-Ingrese el asunto del correo: Prueba de envío
-Ingrese el cuerpo del correo: Este es un correo de prueba enviado desde FastMail.
+Enter the recipient's email address: example@example.com
+Enter the email subject: Test Sending
+Enter the email body: This is a test email sent from FastMail.
 
-Correo enviado exitosamente.
-Respuesta del servidor: <respuesta del servidor SMTP>
+Email sent successfully.
+ Server response: <SMTP server response>
 ```
-### Detalles técnicos
+### Technical details
 
-- Utiliza la biblioteca `smtplib` de Python para enviar correos electrónicos a través de SMTP.
-- Maneja la señal de interrupción `Ctrl + C` para cerrar la conexión correctamente.
-- No es adecuado para producción, pero es útil para pruebas y demostraciones.
+- Uses Python's `smtplib` library to send emails via SMTP.
+- Handles the `Ctrl+C` kill signal to close the connection gracefully.
+- Not suitable for production, but useful for testing and demos.
 
 >[!warning]
 >Try not to send an email to addresses from well-known providers such as Gmail, Yahoo!, Outlook, Hotmail, ProtonMail, TutaMail and many others. These companies can intercept your email as **spam** and block the IP from which it comes. Even if the content of the email is harmless, the server can enter the address and IP into a blacklist for not having a domain.
@@ -118,10 +118,10 @@ Respuesta del servidor: <respuesta del servidor SMTP>
 >[!note]
 >We recommend using a domain you own to send emails. Although the program can work without it, it is more convenient and easier to use a domain.
 
-## Contribuciones
+ ## Contributions
 
-Si deseas contribuir a FastHost o FastMail, ¡siéntete libre de hacer un fork del repositorio y enviar un pull request!
+If you would like to contribute to FastHost or FastMail, feel free to fork the repository and submit a pull request!
 
-## Licencia
+## License
 
-Este proyecto está licenciado bajo la [Apache License 2.0](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
