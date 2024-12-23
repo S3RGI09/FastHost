@@ -61,6 +61,13 @@ Ingrese el código HTML (presione Enter dos veces para terminar):
 - Soporta solicitudes HTTP simples y responde con el contenido HTML proporcionado.
 - No es adecuado para producción, pero es una excelente herramienta educativa y de prueba.
 
+>[!warning]
+>While static content such as HTML, CSS and JavaScript is not dangerous, the server can be compromised by a third party. You are responsible for the security of your server.
+>The server is designed for low traffic and use on a local network, although it is possible to redirect the ports of your router to point to the port of your private IP through your public IP, it is not recommended.
+
+>[!note]
+>The server is designed to work with low load, if your website is going to receive high traffic, it is recommended to use other alternatives such as **Nginx** or **Apache**
+
 ## FastMail
 FastMail es un servidor de correo simple y ligero desarrollado en Python. Este proyecto permite enviar correos electrónicos desde la consola de manera sencilla.
 
@@ -104,6 +111,12 @@ Respuesta del servidor: <respuesta del servidor SMTP>
 - Utiliza la biblioteca `smtplib` de Python para enviar correos electrónicos a través de SMTP.
 - Maneja la señal de interrupción `Ctrl + C` para cerrar la conexión correctamente.
 - No es adecuado para producción, pero es útil para pruebas y demostraciones.
+
+>[!warning]
+>Try not to send an email to addresses from well-known providers such as Gmail, Yahoo!, Outlook, Hotmail, ProtonMail, TutaMail and many others. These companies can intercept your email as **spam** and block the IP from which it comes. Even if the content of the email is harmless, the server can enter the address and IP into a blacklist for not having a domain.
+
+>[!note]
+>We recommend using a domain you own to send emails. Although the program can work without it, it is more convenient and easier to use a domain.
 
 ## Contribuciones
 
