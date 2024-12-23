@@ -2,82 +2,82 @@ import socket
 import os
 
 print("FastHost - by S3RGI09")
-print("v1.0 estable")
-def obtener_codigo_html():
-    print("Seleccione una opción para proporcionar el contenido HTML:")
-    print("1. Ingresar el código HTML directamente")
-    print("2. Cargar el código HTML desde un archivo")
+print("v1.0 stable")
+def get_html_code():
+    print("Select an option to provide the HTML content:")
+    print("1. Enter the HTML code directly")
+    print("2. Load the HTML code from a file")
 
-    opcion = input("Ingrese 1 o 2: ")
+    option = input("Enter 1 or 2: ")
 
-    if opcion == '1':
-        print("\nIngrese el código HTML (presione Enter dos veces para terminar):")
+    if option == '1':
+        print("\nEnter the HTML code (press Enter twice to finish):")
         html = ""
         while True:
-            linea = input()
-            if linea == "":
+            line = input()
+            if line == "":
                 break
-            html += linea + "\n"
+            html += line + "\n"
         return html
 
-    elif opcion == '2':
-        directorio = input("Ingrese la ruta del directorio donde se encuentra el archivo HTML: ")
-        if not os.path.isdir(directorio):
-            print("Error: El directorio no existe.")
+    elif option == '2':
+        directory = input("Enter the path to the directory where the HTML file is located: ")
+        if not os.path.isdir(directory):
+            print("Error: The directory does not exist.")
             return None
 
-        archivo = input("Ingrese el nombre del archivo HTML (con extensión .html): ")
-        ruta_archivo = os.path.join(directorio, archivo)
+        file_name = input("Enter the name of the HTML file (with .html extension): ")
+        file_path = os.path.join(directory, file_name)
 
-        if not os.path.isfile(ruta_archivo):
-            print("Error: El archivo no existe.")
+        if not os.path.isfile(file_path):
+            print("Error: The file does not exist.")
             return None
 
-        with open(ruta_archivo, 'r', encoding='utf-8') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             html = f.read()
         return html
 
     else:
-        print("Opción no válida.")
+        print("Invalid option.")
         return None
 
-def iniciar_servidor():
+def start_server():
     host = 'localhost'
-    puerto = 8080
+    port = 8080
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server_socket.bind((host, puerto))
+    server_socket.bind((host, port))
     server_socket.listen(5)
 
-    print(f"Servidor iniciado en http://{host}:{puerto}")
+    print(f"Server started at http://{host}:{port}")
 
-    html_contenido = obtener_codigo_html()
-    if html_contenido is None:
-        print("No se pudo iniciar el servidor. El contenido HTML es inválido.")
+    html_content = get_html_code()
+    if html_content is None:
+        print("Could not start the server. Invalid HTML content.")
         return
 
     try:
         while True:
             client_socket, client_address = server_socket.accept()
-            print(f"Conexión recibida de {client_address}")
+            print(f"Connection received from {client_address}")
 
             request = client_socket.recv(1024).decode('utf-8')
-            print(f"SOLICITUD:\n{request}")
+            print(f"REQUEST:\n{request}")
 
             response = f"""\
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=UTF-8
 
-{html_contenido}
+{html_content}
 """
 
             client_socket.sendall(response.encode('utf-8'))
             client_socket.close()
     except KeyboardInterrupt:
-        print("\nServidor detenido por el usuario.")
+        print("\nServer stopped by user.")
     finally:
         server_socket.close()
 
 if __name__ == "__main__":
-    iniciar_servidor()
+    start_server()
