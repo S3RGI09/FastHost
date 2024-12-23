@@ -1,4 +1,5 @@
-# FastHost Project
+# ![FastHost Project](https://raw.githubusercontent.com/S3RGI09/imagenes/refs/heads/main/pixelcut-export%20(3).png?token=GHSAT0AAAAAAC34LOKAVOKOIKOZRNUHW6X6Z3JYNNQ)
+
 ## FastHost
 FastHost is a simple and lightweight web server developed in Python. This project allows you to run a local web server that can serve HTML content entered directly or loaded from a file in a specified directory.
 
