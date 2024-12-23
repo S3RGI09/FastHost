@@ -23,7 +23,7 @@ cd FastHost
 ```
 2. Run the script:
 ```
-python web_server.py
+python fasthost.py
 ```
 ### Usage
 
