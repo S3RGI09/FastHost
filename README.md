@@ -1,3 +1,5 @@
+![Versión](https://img.shields.io/badge/versión-2.8-blue)
+![Licencia](https://img.shields.io/badge/licencia-Apache-green)
 # ![FastHost Project](https://github.com/user-attachments/assets/71b1e13e-b816-428c-982a-fc06e0273b78)
 
 ## FastHost
